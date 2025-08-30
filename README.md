@@ -76,3 +76,56 @@ GO
 SELECT *
 FROM Students;
 GO
+
+```
+
+Steps to Setup Database
+
+Open SQL Server Management Studio (SSMS).
+
+Copy and paste the above SQL code into a new query window.
+
+Execute the script to create the EduTrackDB database and Students table.
+
+The database is now ready to use with the application.
+
+⚡ Installation and Setup
+Prerequisites
+
+Visual Studio 2019 or later with .NET desktop development workload
+
+SQL Server & SQL Server Management Studio (SSMS)
+
+.NET Framework 4.7.2 or later
+
+Steps
+
+Clone the repository:
+
+```
+
+git clone https://github.com/your-username/EduTrack.git
+
+```
+Configure Connection String:
+Update DbHelper.cs with your SQL Server instance:
+```
+private readonly string connectionString = "Server=YOUR_SERVER_NAME;Database=EduTrackDB;Trusted_Connection=True;";
+```
+Build & Run:
+
+Open EduTrack.sln in Visual Studio
+
+Build the solution and run the application
+
+🏃 Usage
+
+Launch the app to see the splash screen
+
+Navigate to the Dashboard to view student statistics
+
+Use Add Student to input new records
+
+Use View Students to see all students, search, edit, or delete records
+
+Search students by ID, Name, or Contact Number in real-time
