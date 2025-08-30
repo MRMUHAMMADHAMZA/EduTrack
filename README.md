@@ -76,56 +76,101 @@ GO
 SELECT *
 FROM Students;
 GO
-
 ```
 
-Steps to Setup Database
-
-Open SQL Server Management Studio (SSMS).
-
-Copy and paste the above SQL code into a new query window.
-
-Execute the script to create the EduTrackDB database and Students table.
-
-The database is now ready to use with the application.
-
-⚡ Installation and Setup
-Prerequisites
-
-Visual Studio 2019 or later with .NET desktop development workload
-
-SQL Server & SQL Server Management Studio (SSMS)
-
-.NET Framework 4.7.2 or later
-
-Steps
-
-Clone the repository:
+### Steps to Setup Database
 
 ```
+1. Open SQL Server Management Studio (SSMS).
+2. Copy and paste the above SQL code into a new query window.
+3. Execute the script to create the EduTrackDB database and Students table.
+4. The database is now ready to use with the application.
+```
 
+---
+
+## ⚡ Installation and Setup
+
+### Prerequisites
+
+```
+- Visual Studio 2019 or later with .NET desktop development workload
+- SQL Server & SQL Server Management Studio (SSMS)
+- .NET Framework 4.7.2 or later
+```
+
+### Steps
+
+```bash
+# 1. Clone the repository
 git clone https://github.com/your-username/EduTrack.git
+```
 
-```
-Configure Connection String:
-Update DbHelper.cs with your SQL Server instance:
-```
+```csharp
+// 2. Configure Connection String in DbHelper.cs
 private readonly string connectionString = "Server=YOUR_SERVER_NAME;Database=EduTrackDB;Trusted_Connection=True;";
 ```
-Build & Run:
 
-Open EduTrack.sln in Visual Studio
+```
+# 3. Build & Run
+- Open EduTrack.sln in Visual Studio
+- Build the solution and run the application
+```
 
-Build the solution and run the application
+---
 
-🏃 Usage
+## 🏃 Usage
 
-Launch the app to see the splash screen
+```
+1. Launch the app to see the splash screen.
+2. Navigate to the Dashboard to view student statistics.
+3. Use Add Student to input new records.
+4. Use View Students to see all students, search, edit, or delete records.
+5. Search students by ID, Name, or Contact Number in real-time.
+```
 
-Navigate to the Dashboard to view student statistics
+---
 
-Use Add Student to input new records
+## 🚀 Future Enhancements
 
-Use View Students to see all students, search, edit, or delete records
+```
+- 🔐 User authentication & role-based access (Admin vs Viewer)
+- 📄 Export data to CSV/Excel
+- 📥 Bulk student imports
+- 🎨 Enhanced UI themes & customization options
+- 🔎 Advanced search filters (e.g., Degree Program, Date of Birth)
+```
 
-Search students by ID, Name, or Contact Number in real-time
+---
+
+## 🤝 Contributing
+
+```bash
+# 1. Fork the repository
+# 2. Create a new branch
+git checkout -b feature/your-feature
+
+# 3. Commit your changes
+git commit -m "Add your feature"
+
+# 4. Push to branch
+git push origin feature/your-feature
+
+# 5. Open a Pull Request
+```
+
+---
+
+## 📄 License
+
+```
+This project is licensed under the MIT License. See the LICENSE file for details.
+```
+
+---
+
+## 📬 Contact
+
+```
+For questions or suggestions, open an issue or contact the repository owner.
+```
