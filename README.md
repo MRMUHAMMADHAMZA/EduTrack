@@ -122,4 +122,4 @@ GO
 
 ## 📧 Contact  
 👨‍💻 Developed By: Muhammad Hamza  
-🔗 <a href="https://www.linkedin.com/in/mrmuhammadhamza/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+🔗 <a href="https://www.linkedin.com/in/mrmuhammadhamza/" target="_blank">LinkedIn</a>
