@@ -107,7 +107,9 @@ git clone https://github.com/your-username/EduTrack.git
 ```
 
 ```csharp
-// 2. Configure Connection String in DbHelper.cs
+```
+2. Configure Connection String in DbHelper.cs
+```
 private readonly string connectionString = "Server=YOUR_SERVER_NAME;Database=EduTrackDB;Trusted_Connection=True;";
 ```
 
@@ -121,51 +123,13 @@ private readonly string connectionString = "Server=YOUR_SERVER_NAME;Database=Edu
 
 ## 🏃 Usage
 
-```
 1. Launch the app to see the splash screen.
 2. Navigate to the Dashboard to view student statistics.
 3. Use Add Student to input new records.
 4. Use View Students to see all students, search, edit, or delete records.
 5. Search students by ID, Name, or Contact Number in real-time.
-```
 
 ---
-
-## 🚀 Future Enhancements
-
-```
-- 🔐 User authentication & role-based access (Admin vs Viewer)
-- 📄 Export data to CSV/Excel
-- 📥 Bulk student imports
-- 🎨 Enhanced UI themes & customization options
-- 🔎 Advanced search filters (e.g., Degree Program, Date of Birth)
-```
-
----
-
-## 🤝 Contributing
-
-```bash
-# 1. Fork the repository
-# 2. Create a new branch
-git checkout -b feature/your-feature
-
-# 3. Commit your changes
-git commit -m "Add your feature"
-
-# 4. Push to branch
-git push origin feature/your-feature
-
-# 5. Open a Pull Request
-```
-
----
-
-## 📄 License
-
-```
-This project is licensed under the MIT License. See the LICENSE file for details.
-```
 
 ---
 
