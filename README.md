@@ -37,38 +37,42 @@ EduTrack is a desktop application built using **C#** and **WPF** (Windows Presen
 
 ---
 
-## 🗄️ Database Schema
+## 🗄️ Database Setup
 
-Database: `EduTrackDB`  
+### SQL Server Database Creation Script
 
-Table: `Students`
+```sql
+-- 1️⃣ Create the database if it doesn't exist
+IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = 'EduTrackDB')
+BEGIN
+    CREATE DATABASE EduTrackDB;
+END
+GO
 
-| Column       | Type          | Notes                   |
-|--------------|---------------|------------------------|
-| Id           | int           | Primary Key, Auto-Increment |
-| Name         | nvarchar(100) |                        |
-| FatherName   | nvarchar(100) |                        |
-| DateOfBirth  | date          | Nullable               |
-| Gender       | nvarchar(10)  |                        |
-| ContactNo    | nvarchar(15)  |                        |
-| Email        | nvarchar(100) |                        |
-| DegreeProgram| nvarchar(100) |                        |
-| Address      | nvarchar(250) |                        |
+-- 2️⃣ Use the newly created database
+USE EduTrackDB;
+GO
 
-You can find the database creation script in [`EduTrackDB.sql`](./EduTrackDB.sql).
+-- 3️⃣ Create the Students table (drop first if it exists)
+IF OBJECT_ID('Students', 'U') IS NOT NULL
+    DROP TABLE Students;
+GO
 
----
+CREATE TABLE Students
+(
+    Id INT IDENTITY(1,1) PRIMARY KEY,
+    Name NVARCHAR(100) NOT NULL,
+    FatherName NVARCHAR(100) NOT NULL,
+    DateOfBirth DATE NULL,
+    Gender NVARCHAR(10) NOT NULL,
+    ContactNo NVARCHAR(15) NOT NULL,
+    Email NVARCHAR(100) NULL,
+    DegreeProgram NVARCHAR(100) NOT NULL,
+    Address NVARCHAR(250) NULL
+);
+GO
 
-## ⚡ Installation and Setup
-
-### Prerequisites
-
-- Visual Studio 2019 or later with **.NET desktop development** workload  
-- SQL Server & SQL Server Management Studio (SSMS)  
-- .NET Framework 4.7.2 or later  
-
-### Steps
-
-1. **Clone the repository:**  
-```bash
-git clone https://github.com/your-username/EduTrack.git
+-- 4️⃣ Select all students (initially empty)
+SELECT *
+FROM Students;
+GO
