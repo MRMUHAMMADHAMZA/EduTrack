@@ -89,7 +89,7 @@ GO
 
 1. **Clone the Repository**  
    ```bash
-   github.com/MRMUHAMMADHAMZA/EduTrack
+   git clone https://github.com/MRMUHAMMADHAMZA/EduTrack.git
    ```
 
 2. **Setup Database**  
@@ -121,4 +121,5 @@ GO
 ---
 
 ## 📧 Contact  
-For any questions or suggestions, feel free to **open an issue** or contact the repository owner.  
+👨‍💻 Developed By: Muhammad Hamza  
+🔗 [LinkedIn](https://www.linkedin.com/in/mrmuhammadhamza/)
