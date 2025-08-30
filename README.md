@@ -80,28 +80,24 @@ GO
 
 ### Steps to Setup Database
 
-```
 1. Open SQL Server Management Studio (SSMS).
 2. Copy and paste the above SQL code into a new query window.
 3. Execute the script to create the EduTrackDB database and Students table.
 4. The database is now ready to use with the application.
-```
 
----
 
 ## ⚡ Installation and Setup
 
 ### Prerequisites
 
-```
 - Visual Studio 2019 or later with .NET desktop development workload
 - SQL Server & SQL Server Management Studio (SSMS)
 - .NET Framework 4.7.2 or later
-```
+
 
 ### Steps
 
-```bash
+bash
 # 1. Clone the repository
 git clone https://github.com/your-username/EduTrack.git
 ```
@@ -112,14 +108,9 @@ git clone https://github.com/your-username/EduTrack.git
 ```
 private readonly string connectionString = "Server=YOUR_SERVER_NAME;Database=EduTrackDB;Trusted_Connection=True;";
 ```
-
-```
 # 3. Build & Run
 - Open EduTrack.sln in Visual Studio
 - Build the solution and run the application
-```
-
----
 
 ## 🏃 Usage
 
@@ -129,7 +120,7 @@ private readonly string connectionString = "Server=YOUR_SERVER_NAME;Database=Edu
 4. Use View Students to see all students, search, edit, or delete records.
 5. Search students by ID, Name, or Contact Number in real-time.
 
----
+
 
 ---
 
