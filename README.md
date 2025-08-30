@@ -39,17 +39,41 @@ EduTrack is a desktop application built using **C#** and **WPF (Windows Presenta
 The app uses a **SQL Server database (EduTrackDB)** with a single table **Students**:  
 
 ```sql
-CREATE TABLE Students (
-    Id INT PRIMARY KEY IDENTITY(1,1),
+-- 1️⃣ Create the database if it doesn't exist
+IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = 'EduTrackDB')
+BEGIN
+    CREATE DATABASE EduTrackDB;
+END
+GO
+
+-- 2️⃣ Use the newly created database
+USE EduTrackDB;
+GO
+
+-- 3️⃣ Create the Students table (drop first if it exists)
+IF OBJECT_ID('Students', 'U') IS NOT NULL
+    DROP TABLE Students;
+GO
+
+CREATE TABLE Students
+(
+    Id INT IDENTITY(1,1) PRIMARY KEY,
     Name NVARCHAR(100) NOT NULL,
     FatherName NVARCHAR(100) NOT NULL,
     DateOfBirth DATE NULL,
     Gender NVARCHAR(10) NOT NULL,
-    ContactNo NVARCHAR(12) NOT NULL,
-    Email NVARCHAR(100),
+    ContactNo NVARCHAR(15) NOT NULL,
+    Email NVARCHAR(100) NULL,
     DegreeProgram NVARCHAR(100) NOT NULL,
-    Address NVARCHAR(MAX)
+    Address NVARCHAR(250) NULL
 );
+GO
+
+-- 4️⃣ Select all students (initially empty)
+SELECT *
+FROM Students;
+GO
+
 ```
 
 ---
@@ -76,8 +100,7 @@ CREATE TABLE Students (
    Update `DbHelper.cs` with your SQL Server instance:  
 
    ```csharp
-   private readonly string connectionString = 
-       "Server=YOUR_SERVER_NAME;Database=EduTrackDB;Trusted_Connection=True;";
+   private readonly string connectionString = "Server=YOUR_SERVER_NAME;Database=EduTrackDB;Trusted_Connection=True;";
    ```
 
 4. **Build and Run the Project**  
@@ -93,28 +116,7 @@ CREATE TABLE Students (
 - Open **View Students** → search, edit, or delete records.  
 - Search students in real-time by **ID, Name, or Contact Number**.  
 
----
-
-## 🔮 Future Enhancements  
-- 🔑 Add authentication & role-based access (Admin vs. Viewer).  
-- 📤 Export data to **CSV/Excel**.  
-- 📥 Support **bulk imports**.  
-- 🎨 More UI themes.  
-- 📅 Advanced search filters (e.g., Degree Program, Date of Birth).  
-
----
-
-## 🤝 Contributing  
-1. Fork the repository  
-2. Create a feature branch → `git checkout -b feature/your-feature`  
-3. Commit changes → `git commit -m "Add your feature"`  
-4. Push to branch → `git push origin feature/your-feature`  
-5. Create a **Pull Request**  
-
----
-
-## 📜 License  
-This project is licensed under the **MIT License**. See the LICENSE file for details.  
+--- 
 
 ---
 
