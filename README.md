@@ -89,7 +89,7 @@ GO
 
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/your-username/EduTrack.git
+   github.com/MRMUHAMMADHAMZA/EduTrack
    ```
 
 2. **Setup Database**  
