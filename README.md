@@ -30,7 +30,7 @@ EduTrack is a desktop application built using **C#** and **WPF (Windows Presenta
 ## 📂 Project Structure  
 - **EduTrack.Models** → Contains `Student` class with properties (Id, Name, FatherName, etc.)  
 - **EduTrack.Views** → WPF windows (`SplashScreen.xaml`, `Dashboard.xaml`, `AddStudent.xaml`, `ViewStudent.xaml`).  
-- **EduTrack** → Contains `DbHelper.cs` for database operations (CRUD & stats).  
+- **EduTrack** → Contains `DatabaseHelper.cs` for database operations (CRUD & stats).  
 - **App.xaml** → Configures app startup with splash screen.  
 
 ---
@@ -97,7 +97,7 @@ GO
    - Run the SQL script above to create the database and table.  
 
 3. **Configure Connection String**  
-   Update `DbHelper.cs` with your SQL Server instance:  
+   Update `DatabaseHelper.cs` with your SQL Server instance:  
 
    ```csharp
    private readonly string connectionString = "Server=YOUR_SERVER_NAME;Database=EduTrackDB;Trusted_Connection=True;";
