@@ -49,6 +49,72 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <!-- Edit Button Style -->
+        <Style x:Key="EditButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="#FFA500"/>
+            <!-- Orange -->
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF8C00"/>
+                    <!-- DarkOrange -->
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#FF6600"/>
+                    <!-- Deep Orange -->
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Delete Button Style -->
+        <Style x:Key="DeleteButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Background" Value="#FF0000"/>
+            <!-- Red -->
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="5" BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#B22222"/>
+                    <!-- Firebrick -->
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#8B0000"/>
+                    <!-- DarkRed -->
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
 
     <Grid Background="#F5F7FA">
@@ -100,33 +166,32 @@
                 <DockPanel Grid.Row="0" Margin="5" LastChildFill="True">
                     <!-- Header Text -->
                     <TextBlock Text="Student List"
-               FontSize="20"
-               FontWeight="Bold"
-               Foreground="#001133"
-               VerticalAlignment="Center"
-               DockPanel.Dock="Left"/>
+                               FontSize="20"
+                               FontWeight="Bold"
+                               Foreground="#001133"
+                               VerticalAlignment="Center"
+                               DockPanel.Dock="Left"/>
 
                     <!-- Search Section -->
                     <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0">
                         <!-- Search TextBox -->
                         <TextBox x:Name="txtSearch"
-                 Width="200"
-                 Height="30"
-                 Margin="5,0"
-                 VerticalAlignment="Center"
-                 Padding="5"
-                 ToolTip="Search by ID, Name, or Contact"
-                 TextChanged="txtSearch_TextChanged"/>
+                                 Width="200"
+                                 Height="30"
+                                 Margin="5,0"
+                                 VerticalAlignment="Center"
+                                 Padding="5"
+                                 ToolTip="Search by ID, Name, or Contact"
+                                 TextChanged="txtSearch_TextChanged"/>
 
                         <!-- Search Button -->
                         <Button Content="🔍 Search"
-                Width="100" Height="30"
-                Margin="5,0"
-                Style="{StaticResource AddButtonStyle}"
-                Click="BtnSearch_Click"/>
+                                Width="100" Height="30"
+                                Margin="5,0"
+                                Style="{StaticResource AddButtonStyle}"
+                                Click="BtnSearch_Click"/>
                     </StackPanel>
                 </DockPanel>
-
 
                 <!-- DataGrid -->
                 <DataGrid x:Name="dgStudents"
@@ -154,8 +219,8 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                        <Button Content="✏ Edit" Width="80" Height="35" Background="Orange" Foreground="White" FontWeight="Bold" Margin="4" Click="BtnEdit_Click"/>
-                                        <Button Content="🗑 Delete" Width="90" Height="35" Background="Red" Foreground="White" FontWeight="Bold" Margin="4" Click="BtnDelete_Click"/>
+                                        <Button Content="✏ Edit" Style="{StaticResource EditButtonStyle}" Click="BtnEdit_Click"/>
+                                        <Button Content="🗑 Delete" Style="{StaticResource DeleteButtonStyle}" Click="BtnDelete_Click"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
